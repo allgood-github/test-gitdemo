@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/test")
 public class TestApi {
 
+    String s = "测试代码，假的";
 
     @Autowired
     MyCar myCar;
