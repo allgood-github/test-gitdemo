@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TestApi {
 
     String s = "测试代码，假的";
+    String s1 = "测试代码，假的";
+    String s2 = "测试代码，假的";
 
     @Autowired
     MyCar myCar;
