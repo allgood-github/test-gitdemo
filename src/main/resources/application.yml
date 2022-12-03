@@ -1,0 +1,76 @@
+#spring:
+#  mvc:
+#    static-path-pattern: /res/**  #更改静态资源路径
+#  web:
+#    resources:
+#      static-locations: classpath:/haha  #指定静态资源文件夹 默认为 public static templates
+
+server:
+  port: 8080
+
+spring:
+  redis:
+    host: 47.94.14.177
+    port: 7001
+    password: zhaoniuniu001..
+    client-type: jedis
+    jedis:
+      pool:
+        max-active: 10
+    connect-timeout: 20000
+
+  # MVC
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true  # 开启 springboot的rest风格功能
+    contentnegotiation:
+      favor-parameter: true # 开启内容协商功能，根据客户端的请求头判断支持的返回数据类型
+      media-types:
+        uu : application/x-wetrol
+
+
+  # 数据源
+  datasource:
+    url: jdbc:mysql://47.94.14.177:3306/jtdb
+    username: root
+    password: zhaoniuniu001..
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    druid:
+      #监控页
+      stat-view-servlet: # 配置监控页功能
+        enabled: true
+        login-username: admin
+        login-password: admin123
+        reset-enable: false
+
+      # ============================ == ================
+      aop-patterns: com.wetrol.testdemo.* # 监控SpringBean
+      filters: stat,wall  # 底层开启功能，stat(SQL) ， wall(防火墙)
+
+      web-stat-filter:  # 监控web
+        enabled: true
+        urlPattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+
+      # 上面的是针对filters的总配置
+
+      # 可以利用下面这个针对某一个进行配置，这是配置文件形式，还可以在代码中配置
+      filter:
+        stat: # 对上面filters里面的stat的详细配置
+          slow-sql-millis: 1000
+          logSlowSql: true
+          enabled: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+
+# mybatis
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  mapper-locations: classpath:mapper/*.xml
+

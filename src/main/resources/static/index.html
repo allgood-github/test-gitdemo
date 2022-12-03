@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wetrol</title>
+</head>
+<script type="text/javascript">
+
+
+
+</script>
+<body>
+<h1>你好 ~ Wetrol</h1>
+<form action="/api/user" method="post">
+<!--    rest 风格-->
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="发送请求">
+</form>
+<h1>-----------------------------------------------</h1>
+<form action="/api/save" method="post">
+<!--    <input name="username"/><br/>-->
+<!--    <input name="myCar.name"/><br/>-->
+<!--    <input name="myCar.price"/><br/>-->
+    <input name="pet">
+    <input type="submit" value="保存个人信息">
+</form>
+</body>
+
+</html>
