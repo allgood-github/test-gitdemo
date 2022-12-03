@@ -18,6 +18,8 @@ public class TestDemoApplication {
 
     public static void main(String[] args) {
         String s ="练习合并代码冲突,what happen！";
+        String s2 ="练习合并代码冲突,what happen！";
+
         ConfigurableApplicationContext run = SpringApplication.run(TestDemoApplication.class, args);
 
         String[] beanDefinitionNames = run.getBeanDefinitionNames();
