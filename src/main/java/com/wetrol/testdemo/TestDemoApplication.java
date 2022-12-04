@@ -18,7 +18,7 @@ public class TestDemoApplication {
 
     public static void main(String[] args) {
         String s ="练习合并代码冲突,what happen！";
-        String s2 ="练习合并代码冲突,what happen！";
+        String s2 ="练习合并代码冲突,what happen！origin/master change 2022年12月4日18:19:54";
         String s3 ="练习合并代码冲突";
         ConfigurableApplicationContext run = SpringApplication.run(TestDemoApplication.class, args);
 
