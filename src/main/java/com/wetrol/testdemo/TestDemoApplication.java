@@ -21,6 +21,7 @@ public class TestDemoApplication {
         String s2 ="练习合并代码冲突,2022年12月4日18:03:07 Local Change！";
         String s24 ="练习合并代码冲突,what happen！origin/master change 2022年12月4日18:19:54--------------------------------------------";
         String s3 ="练习合并代码冲突";
+        String s6 ="呵呵哒，remote";
         ConfigurableApplicationContext run = SpringApplication.run(TestDemoApplication.class, args);
 
         String[] beanDefinitionNames = run.getBeanDefinitionNames();
